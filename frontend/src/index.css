@@ -1,0 +1,212 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+/* layout */
+
+:root {
+  --primary: #1aac83;
+  --error:#e7195a;
+}
+
+
+body {
+  background : #f1f1f1;
+  margin:0;
+  font-family: 'Poppins', sans-serif;
+}
+ 
+header {
+  background : #fff;
+  padding:10px 140px ;
+}
+
+header.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding:10px 20px;
+  display:flex;
+  align-items: center; 
+  justify-content: space-between;
+}
+
+header a{
+  color: #333;
+  text-decoration: none;
+}
+
+.pages{
+  max-width: 1400px;
+  padding:20px 120px;
+  margin: 0 auto;
+}
+
+
+/* homepage */
+
+.home {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap:100px;
+  
+}
+
+.workout-details {
+  background: #fff;
+  border-radius: 4px;
+  margin: 20px;
+  margin-right: auto;
+  /* margin-left: 50px; */
+  /* max-width: 100%; */
+  padding: 20px;
+  position: relative;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.05); /* this is to give it some depth */
+}
+
+.workout-details h4 {
+  margin : 0 0 10px 0; /* top right bottom left */
+  font-size: 1.2em;
+  color: var(--primary)
+}
+
+.workout-details p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #555;
+  /* position: relative; */
+}
+ 
+/* requirent delete button ko top right corner me lejana */
+/* .workout-details button{
+  font-family: "poppins", monospace;
+  position: absolute;
+  border: transparent;
+  top: 20px;
+  right: 20px;
+  padding:6px;
+  border-radius: 50%;
+  cursor: pointer;
+} */
+
+
+
+/* for delete button later */
+.workout-details span {
+  position: absolute;
+  top:20px;
+  right: 20px;
+  cursor: pointer;
+  background: #f1f1f1;
+  padding:6px;
+  border-radius: 50%;
+  color:#333;
+}
+  
+
+
+  form{
+   
+    display: flex;
+    flex-direction: column;
+    margin:10px auto;
+    width: 100%;
+    /* max-width:fit-content; */
+    /* margin-right: auto;
+    margin-left: -30px; */
+  }
+
+  form h3 {
+    margin-bottom: 10px;
+  }
+
+  .create button{
+    padding:4px 12px;
+    border-radius: 4px;
+    margin:20px 0px 0px 4px ;
+    border: transparent;
+    color:#f1f1f1;
+    background-color:var(--primary);
+    cursor: pointer;
+  }
+
+  .create input{
+    display: block;
+    padding: 4px;
+    margin-top: 10px;
+    border: transparent;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 270px;
+  }
+
+  label{
+    display: block;
+    padding-top: 10px ;
+    padding-left: 4px;
+  }
+  
+
+  /* .space-right{
+    margin: 10px;
+    border: 1px;
+    width: 10%;
+  } */
+
+ /* .form-container{
+  display: flex;
+ } */
+
+
+ div.error{
+   margin: 20px,0;
+   display:flex;
+   justify-content: center;
+   padding: 10px;
+   background-color: #fef3fe;
+   border: 1px solid var(--error);
+   border-radius:4px;
+   color:var(--error)
+ }
+
+ input.error{
+  border: 1px solid var(--error);
+ }
+
+ .error-popup{
+  padding: 10px;
+  border: 1px solid var(--primary);
+  background-color: #fff;
+  border-radius: 4px;
+  color: var(--error);
+  box-shadow: #333;
+  z-index: 1;
+ }
+
+
+ /* label{
+  position: relative;
+ } */
+ .popup{
+   display: flex;
+   position: absolute;
+ }
+
+/*  css lesson: 
+
+05/July/2026 :  file:///C:/Users/Risha/Downloads/CSS_Grid_Mindset_Notes.pdf
+
+UI looks wrong
+↓
+Is the parent layout correct?
+↓
+Is the child width correct?
+↓
+Only then use margins.
+
+*/
+
+
+
+
+
+
+

@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+
+# environment variables
+.env
+**/.env
+
+# logs
+logs
+*.log
+
+# build
+dist
+dist-ssr
+
+# editor
+.vscode/
+!.vscode/extensions.json
+.idea/
+
+# OS
+.DS_Store
+
+# Ignore entire atlas-ip-updater project
+atlas-ip-updater/

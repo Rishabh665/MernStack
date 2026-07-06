@@ -1,0 +1,24 @@
+React context notes
+
+// in our workout app once we add new workout it is not showing in the home page until we refresh the page so because the state (workouts) is not updated hence new data is not fetched
+// therefore, to update state locally we use react context;
+// by this react context we can provide kinda global state to 
+// many of the component of the application 
+// we can also update that state using dispatch actions from those components
+// as well; a little bit like redux
+// global state we gonna be working with is workout state that we gonna fetch from mongodb
+// so that rather than passed the data in the form of props from components and pages
+// we can access them and update them directly using context provider from any component///  whole series to dive deep into react hooks and context
+
+
+
+// we create a state for dynamic data access for the children so this context provider component
+
+// for this instead of useState , we use useReducer hook
+
+// its similar to useState, like here [state, dispatch] ; state = value, dispatch is a function  and we specify a value for this state => {workouts:null} // obj
+
+
+difference is two function : dispatch and workoutReducer fn
+
+dispatch fn ke andar aciton argument pass karke invoke karenge then workoutReducer fn fire hoga jisko hum aage banayge and then action iss fn mein jayega then it update the state
