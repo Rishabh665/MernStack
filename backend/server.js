@@ -12,10 +12,16 @@ console.log("MONG_URI=", !!process.env.MONG_URI)
 //  to create backend api in a simple way where low level work is handled by express so that we can simply focus on functionality/business logic)
 const express = require("express");
 
+
+// importing Cors packages
+const cors = require( "cors");
+
 //creating express application object by calling express factory function from Express packages (library/framework)
 const app = express();
 
 //middleware
+
+app.use(cors()); // CORS middle ware should run before route handlers
 
 app.use(express.json()); // parsing req.body while client hit post api
 
