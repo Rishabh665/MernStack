@@ -76,6 +76,10 @@ const WorkoutForm = () => {
     }
   };
 
+  const handleEmptyFieldClick =()=>{
+    setEmptyFields([])
+  }
+
   return (
     <form className="create" onSubmit={handleSubmit}>
       <h3>Add a new Workout</h3>
@@ -125,7 +129,7 @@ const WorkoutForm = () => {
         <button>Add</button>
       </div>
 
-      {error && <div className="error">{error}</div>}
+      {error && <div className="error">{error} <button className="popup" onClick={handleEmptyFieldClick}>x</button></div>}
     </form>
   );
 };
