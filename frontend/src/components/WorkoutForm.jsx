@@ -17,13 +17,16 @@ const WorkoutForm = () => {
 
     const workout = { title, load, reps };
     // typo be aware ok!
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/new/addWorkout`, {
-      method: "POST",
-      body: JSON.stringify(workout),
-      headers: {
-        "Content-Type": "application/json",
+    const response = await fetch(
+      `${import.meta.env.VITE_API_URL}/api/new/addWorkout`,
+      {
+        method: "POST",
+        body: JSON.stringify(workout),
+        headers: {
+          "Content-Type": "application/json",
+        },
       },
-    });
+    );
 
     const json = await response.json();
     if (!response.ok) {
@@ -48,8 +51,9 @@ const WorkoutForm = () => {
   const handleLoad = (e) => {
     const value = e.target.value;
 
-    if (isNaN(value)) {  // type === "string" will not work because in react every input is string ; later on it changes in schema
-      setErrorPopup([...errorPopup,"load"]);
+    if (isNaN(value)) {
+      // type === "string" will not work because in react every input is string ; later on it changes in schema
+      setErrorPopup([...errorPopup, "load"]);
     }
 
     setLoad(e.target.value);
@@ -59,7 +63,7 @@ const WorkoutForm = () => {
     const value = e.target.value;
 
     if (isNaN(value)) {
-      setErrorPopup([...errorPopup,"reps"]);
+      setErrorPopup([...errorPopup, "reps"]);
     }
     setReps(e.target.value);
   };
@@ -76,9 +80,11 @@ const WorkoutForm = () => {
     }
   };
 
-  const handleEmptyFieldClick =()=>{
-    setEmptyFields([])
-  }
+  const handleEmptyFieldClick = (e) => {
+    e.preventDefault();
+    setEmptyFields([]);
+    setError(null);
+  };
 
   return (
     <form className="create" onSubmit={handleSubmit}>
@@ -129,7 +135,15 @@ const WorkoutForm = () => {
         <button>Add</button>
       </div>
 
-      {error && <div className="error">{error} <button className="popup" onClick={handleEmptyFieldClick}>x</button></div>}
+      {error && (<>
+        <div className="error">
+          <div>{error}</div>
+        </div>
+        <div>
+            <button onClick={(e) => handleEmptyFieldClick(e)}>x</button>
+          </div>
+          </>
+      )}
     </form>
   );
 };
