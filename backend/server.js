@@ -3,10 +3,9 @@ require("dotenv").config(); // dotenv global object is now available in our expr
 
 // dns fix by copilot:
 require('node:dns/promises').setServers(['1.1.1.1','8.8.8.8']);
-require('dotenv').config();
 
-//checking uri
-console.log("MONG_URI=", !!process.env.MONG_URI)
+//checking uri (debugging)
+// console.log("MONG_URI=", !!process.env.MONG_URI)
 
 // importing express packages (express provides abstraction layer on top of node.js framework,
 //  to create backend api in a simple way where low level work is handled by express so that we can simply focus on functionality/business logic)
