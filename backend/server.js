@@ -20,11 +20,15 @@ const app = express();
 //middleware
 
 const allowedOrigins = [
-  "http://localhost:3000",  // local frontend server
-  "vercel-url-placholder", // deployed frontend cloud server vercel
+  "http://localhost:3000", // local frontend server
+  "mern-stack-iota-eight.vercel.app", // deployed frontend cloud server vercel
 ];
 
-app.use(cors()); // CORS middle ware should run before route handlers
+app.use(
+  cors({
+    origin: allowedOrigins,
+  }),
+); // CORS middle ware should run before route handlers
 
 app.use(express.json()); // parsing req.body while client hit post api
 
