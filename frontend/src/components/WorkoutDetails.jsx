@@ -13,8 +13,10 @@ const WorkoutDetails = ({workout}) =>{
 
    const handleClick = async () => {
       
+        const API = import.meta.env.VITE_API_URL;
+
     try{
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/deleteWorkout/${workout._id}`,{method:"DELETE"});
+    const response = await fetch(`${API}/api/deleteWorkout/${workout._id}`,{method:"DELETE"});
         const json = await response.json();
 
         if(response.ok){

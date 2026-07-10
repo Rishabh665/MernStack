@@ -15,10 +15,12 @@ const WorkoutForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const API = import.meta.env.VITE_API_URL;
+
     const workout = { title, load, reps };
     // typo be aware ok!
     const response = await fetch(
-      `${import.meta.env.VITE_API_URL}/api/new/addWorkout`,
+      `${API}/api/new/addWorkout`,
       {
         method: "POST",
         body: JSON.stringify(workout),

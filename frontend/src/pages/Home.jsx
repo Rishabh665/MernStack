@@ -11,9 +11,11 @@ const Home = () => {
 
   const { workouts, dispatch } = useWorkoutsContext();
 
+  const API = import.meta.env.VITE_API_URL;
+
   useEffect(() => {
     const fetchWorkouts = async () => {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/getWorkouts`); // cors origin ki jugad during development ,
+      const response = await fetch(`${API}/api/getWorkouts`); // cors origin ki jugad during development ,
       // this trick only work of CRA, proxy:"localhost of backend server" in frontend package.json
       // for vite
 
