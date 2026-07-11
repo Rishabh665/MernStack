@@ -22,6 +22,7 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:3000", // local frontend server
   "https://mern-stack-iota-eight.vercel.app", // deployed frontend cloud server vercel
+  //  process.env.FRONTEND_URL, later...
 ];
 
 app.use(
